@@ -2,6 +2,7 @@ import Home from './Home';
 import LoginForm from './LoginForm';
 import FoodJournalForm from "./FoodJournalForm"
 import { Link, Routes, Route } from 'react-router-dom';
+// group 10 project
 
 
 export default function App(){
@@ -20,6 +21,7 @@ return(
             <Route path= "/" element = {<Home/>}/>
             <Route path= "/LoginForm" element = {<LoginForm/>}/>
             <Route path= "/FoodJournalForm" element = {<FoodJournalForm/>}/>
+            
 
 
 
