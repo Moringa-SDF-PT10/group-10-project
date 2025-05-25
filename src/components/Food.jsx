@@ -1,4 +1,4 @@
-export default function Food({food}){
+export default function Food({food, isFavorite, onToggleFavorite}){
 
 return(
 
@@ -24,9 +24,9 @@ return(
     <h3>Data Type: {food.dataType}</h3>
     <h3>Publication Data:{food.publicationDate}</h3>
 
-     <button>
+     <button onClick={() => onToggleFavorite(food.fdcId)}>
            
-           Mark as favorite
+      {isFavorite ? "Unmark Favorite" : "Marks as Favorite"}
     
     </button>
       <button>
