@@ -26,13 +26,26 @@ const [foods, setFoods]= useState([])
  }, [foods]);
 
 
+ //Initialize the initial state of search
+  const [searchedItem, setSearchedItem] = useState('')
+
+  //updated the state of searched item to be the input on the form
+  const formChangeHandler = (e)=>{
+     setSearchedItem(e.target.value)
+
+  }
+
+const filteredList = foods.filter(food=> food.description && food.description.toLowerCase().includes(searchedItem.toLowerCase()))
+
 
   return (
     <>
     <div className = "container">
-      <h1>Food Nutrition App </h1>
-      <Search/>
-      <FoodList foods = {foods}/>
+      {/* <h1>Food Nutrition App </h1> */}
+      
+      <Search formChangeHandler ={formChangeHandler}/>
+      
+      <FoodList foods = {filteredList}/>
     </div>
       
      
