@@ -26,7 +26,7 @@ return(
 
      <button onClick={() => onToggleFavorite(food.fdcId)}>
            
-      {isFavorite ? " Unmark as Favorite" : "Mark as Favorites"}
+      {isFavorite ? " Unmark as Favorite" : "Mark as Favorite"}
     
     </button>
       <button onClick={() => onDeleteFood(food.fdcId)}>
