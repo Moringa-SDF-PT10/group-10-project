@@ -29,6 +29,12 @@ return(
    <h3 className="food-meta">Data Type: {food.dataType}</h3>
 <h3 className="food-meta">Publication Date: {food.publicationDate}</h3>
 
+ <button>
+           
+           View Details
+    
+    </button>
+
      <button>
            
            Mark as favorite
