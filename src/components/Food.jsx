@@ -1,7 +1,5 @@
 export default function Food({food}){
 
-
-
 return(
 
 <div className = "food-box">
