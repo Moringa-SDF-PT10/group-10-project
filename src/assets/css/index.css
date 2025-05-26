@@ -76,3 +76,18 @@ img{
 .app-nav a:hover {
   color: #4f378b;
 }
+
+.toggleFavorites {
+  margin: 7px 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button {
+  margin: 2px 0;
+}
+
+.toggleFavorites:hover {
+  background-color: #4f378b;
+  color: white;
+}
