@@ -10,20 +10,69 @@ function Home() {
 //Initialize the initial state of data in an empty array before fetching
 const [foods, setFoods]= useState([])
 
-//Fetch data using the useEffect hook
- useEffect(()=>{
+//Initialize the initial state of search
+const [searchedItem, setSearchedItem] = useState('')
 
-  fetch("https://api.nal.usda.gov/fdc/v1/foods/list?api_key=8Rv57kYxBTe6DURXfAZu8DBKcol1W0hpsrc7d1xJ")
-      .then(response => response.json())
-      .then(data => setFoods(data.slice(3)))
-      .catch(err => console.log("enable to fetch", err))
+
+
+  // Helper function to get image from TheMealDB
+  const getImageForFood = async (description) => {
+    const keywords = description.split(',')[0].split(' ').slice(0, 2).join(' ');
+    try {
+      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${keywords}`);
+      const data = await res.json();
+      return data.meals?.[0]?.strMealThumb || "https://via.placeholder.com/500x600?text=No+Image";
+    } catch (err) {
+      console.error("Image fetch failed for:", description, err);
+      return "https://via.placeholder.com/500x600?text=No+Image";
+    }
+  };
+
+
+//Fetch data using the useEffect hook
+useEffect(() => {
+  const fetchFoodsWithRandomImages = async () => {
+    try {
+      // 1. Fetch food data from USDA
+      const foodResponse = await fetch("https://api.nal.usda.gov/fdc/v1/foods/list?api_key=8Rv57kYxBTe6DURXfAZu8DBKcol1W0hpsrc7d1xJ");
+      const foodData = await foodResponse.json();
+      const limitedFoods = foodData.slice(3, 23); // fetch only 20 .. limit for performance
+
+      // 2. Fetch meal data from MealDB
+      const mealResponse = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=");
+      const mealData = await mealResponse.json();
+      const meals = mealData.meals;
+
+      // 3. Assign a random image from meals to each food item
+      const enrichedFoods = limitedFoods.map(food => {
+        const randomMeal = meals[Math.floor(Math.random() * meals.length)];
+        return {
+          ...food,
+          image: randomMeal.strMealThumb || "https://via.placeholder.com/500x600?text=No+Image"
+        };
+      });
+
+      setFoods(enrichedFoods);
+    } catch (err) {
+      console.error("Failed to fetch foods or meals", err);
+    }
+  };
+
+  fetchFoodsWithRandomImages();
+}, []);
       
- },[])        
-      
- // Log foods whenever it updates
- useEffect(() => {
-   console.log(foods);
- }, [foods]);
+//  // Log foods whenever it updates
+//  useEffect(() => {
+//    console.log(foods);
+//  }, [foods]);
+
+
+  //updated the state of searched item to be the input on the form
+  const formChangeHandler = (e)=>{
+     setSearchedItem(e.target.value)
+
+  }
+
 
 
 
@@ -31,8 +80,10 @@ const [foods, setFoods]= useState([])
     <>
     <div className = "container">
       <h1>Food Nutrition App </h1>
-      <Search/>
-      <FoodList foods = {foods}/>
+      
+      <Search formChangeHandler ={formChangeHandler}/>
+      
+      <FoodList searchedItem = {searchedItem} foods = {foods}/>
     </div>
       
      
