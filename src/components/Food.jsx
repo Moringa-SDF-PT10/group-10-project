@@ -1,4 +1,4 @@
-export default function Food({food}){
+export default function Food({food, isFavorite, onToggleFavorite, onDeleteFood}){
 
 return(
 
@@ -33,12 +33,12 @@ return(
     
     </button>
 
-     <button>
+     <button onClick={() => onToggleFavorite(food.fdcId)}>
            
-           Mark as favorite
+      {isFavorite ? " Unmark as Favorite" : "Mark as Favorite"}
     
     </button>
-      <button>
+      <button onClick={() => onDeleteFood(food.fdcId)}>
            
            Delete Food
     

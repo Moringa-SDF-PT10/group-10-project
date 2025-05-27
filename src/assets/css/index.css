@@ -77,7 +77,6 @@ img{
   color: #4f378b;
 }
 
-
 /*Styling for nutrient list*/
 .nutrient-list {
   list-style-type: none;
@@ -124,4 +123,19 @@ img{
 
 .food-meta:nth-of-type(2) {
   margin-bottom: 1.5rem; /* add space below the second line */
+}
+
+.toggleFavorites {
+  margin: 7px 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button {
+  margin: 2px 0;
+}
+
+.toggleFavorites:hover {
+  background-color: #4f378b;
+  color: white;
 }
