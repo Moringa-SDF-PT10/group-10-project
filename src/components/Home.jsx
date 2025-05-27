@@ -73,17 +73,17 @@ useEffect(() => {
 
   }
 
-const filteredList = foods.filter(food=> food.description && food.description.toLowerCase().includes(searchedItem.toLowerCase()))
+
 
 
   return (
     <>
     <div className = "container">
-      {/* <h1>Food Nutrition App </h1> */}
+      <h1>Food Nutrition App </h1>
       
       <Search formChangeHandler ={formChangeHandler}/>
       
-      <FoodList foods = {filteredList}/>
+      <FoodList searchedItem = {searchedItem} foods = {foods}/>
     </div>
       
      
