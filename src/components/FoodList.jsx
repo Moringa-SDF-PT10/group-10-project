@@ -1,5 +1,6 @@
 import Food from './Food.jsx'
-import { useState } from 'react'
+import {useState} from 'react'
+import Search from './Search'
 
 export default function FoodList({foods}){
 
@@ -42,7 +43,6 @@ export default function FoodList({foods}){
           onDeleteFood={onDeleteFood}
           />
         ))}
-
       </div>
     </>
 

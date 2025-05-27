@@ -77,6 +77,54 @@ img{
   color: #4f378b;
 }
 
+/*Styling for nutrient list*/
+.nutrient-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fafafa;
+  max-width: 500px;
+}
+
+.nutrient-list li {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+}
+
+.nutrient-list li:last-child {
+  border-bottom: none;
+}
+
+.nutrient-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.nutrient-details {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/*styling for food publication date  and data type  */
+.food-meta {
+  font-size: 1rem;
+  color: #444;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.food-meta:nth-of-type(2) {
+  margin-bottom: 1.5rem; /* add space below the second line */
+}
+
 .toggleFavorites {
   margin: 7px 0;
   padding: 5px;

@@ -1,8 +1,8 @@
-export default function Search (){
+export default function Search ({formChangeHandler}){
 
 return(
 
- <input type="text" name="search" placeholder="Search food..." />
+ <input onChange={formChangeHandler}  type="text"  name="search" placeholder="Search food..." />
 
 
 )
