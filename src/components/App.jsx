@@ -1,5 +1,6 @@
 import Home from './Home';
 import LoginForm from './LoginForm';
+import SignUp from './SignUp';
 import FoodJournalForm from "./FoodJournalForm"
 import { Link, Routes, Route } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ return(
         <Routes>
             <Route path= "/" element = {<Home/>}/>
             <Route path= "/LoginForm" element = {<LoginForm/>}/>
+            <Route path= "/SignUp" element = {<SignUp/>}/>
             <Route path= "/FoodJournalForm" element = {<FoodJournalForm/>}/>
             
 

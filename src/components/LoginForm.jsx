@@ -50,6 +50,8 @@ export default function LoginForm(){
            />
 
            <button type="button" onClick={handleLogin}>Login</button>
+           <p>Don't have an account?{''}<Link to= {"/SignUp"}>Sign Up</Link></p>
+           
            
 
 

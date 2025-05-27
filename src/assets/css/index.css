@@ -78,59 +78,21 @@ img{
 }
 
 
-
-
-
-.my-form-container form {
-  max-width: 420px;
-  margin: 40px auto;
-  padding: 24px;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: sans-serif;
+.my-form-container {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #f2f2f2;
+  border-radius: 8px;
 }
-
-.my-form-container label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* Similarly prefix other selectors */
 .my-form-container input,
-.my-form-container textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 15px;
-  transition: border-color 0.3s;
-}
-
-.my-form-container input:focus,
-.my-form-container textarea:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
 .my-form-container button {
+  display: block;
   width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  margin: 10px 0;
+  padding: 10px;
 }
 
-.my-form-container button:hover {
-  background-color: #0056b3;
-}
 
 
 
