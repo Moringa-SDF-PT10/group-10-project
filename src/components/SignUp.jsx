@@ -18,7 +18,7 @@ export default function SignUp() {
     };
 
     return (
-        <div className="my-form-container">
+        <div className="my-form-containerr">
             <form onSubmit={(e) => e.preventDefault()}>
                 <h2>Sign Up</h2>
                 <input
