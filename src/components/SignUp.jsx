@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 //initializa state variable
 export default function SignUp() {
-    const [username, setUsername] = useState();
-    const [password, setPassword] =useState();
+    const [username, setUsername] = useState('');
+    const [password, setPassword] =useState('');
     const navigate = useNavigate();
 
     
@@ -35,6 +35,7 @@ export default function SignUp() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 />
+                
                 <button type="button" onClick={handleSignUp}>
                     Register
                 </button>
