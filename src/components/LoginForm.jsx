@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
 
-
 export default function LoginForm(){
 
     //initialized state
@@ -31,7 +30,7 @@ export default function LoginForm(){
 
     return(
 
-    <div className="my-form-container">
+    <div className="my-form-containerr">
 
         <form onSubmit={(e) => e.preventDefault()}>
         <h2>Login</h2>
