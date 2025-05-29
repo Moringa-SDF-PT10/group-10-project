@@ -5,6 +5,7 @@ import FoodJournalForm from "./FoodJournalForm"
 import { Link, Routes, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import PersonalNotes from "./PersonalNotes";
+
 import  { useAuth} from "./AuthContext";
 import {useNavigate} from 'react-router-dom';
 
