@@ -213,3 +213,20 @@ button {
   background-color: #4f378b;
   color: white;
 }
+
+/* Center the main box horizontally and vertically */
+#detailed-nutrient-main-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center the nutrient container and its content */
+#detail-nutrient-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}

@@ -9,24 +9,25 @@ function Home() {
  
 //Initialize the initial state of data in an empty array before fetching
 const [foods, setFoods]= useState([])
+const [loading, setLoading] = useState(true);
 
 //Initialize the initial state of search
 const [searchedItem, setSearchedItem] = useState('')
 
 
 
-  // Helper function to get image from TheMealDB
-  const getImageForFood = async (description) => {
-    const keywords = description.split(',')[0].split(' ').slice(0, 2).join(' ');
-    try {
-      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${keywords}`);
-      const data = await res.json();
-      return data.meals?.[0]?.strMealThumb || "https://via.placeholder.com/500x600?text=No+Image";
-    } catch (err) {
-      console.error("Image fetch failed for:", description, err);
-      return "https://via.placeholder.com/500x600?text=No+Image";
-    }
-  };
+  // // Helper function to get image from TheMealDB
+  // const getImageForFood = async (description) => {
+  //   const keywords = description.split(',')[0].split(' ').slice(0, 2).join(' ');
+  //   try {
+  //     const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${keywords}`);
+  //     const data = await res.json();
+  //     return data.meals?.[0]?.strMealThumb || "https://via.placeholder.com/500x600?text=No+Image";
+  //   } catch (err) {
+  //     console.error("Image fetch failed for:", description, err);
+  //     return "https://via.placeholder.com/500x600?text=No+Image";
+  //   }
+  // };
 
 
 //Fetch data using the useEffect hook
@@ -53,6 +54,7 @@ useEffect(() => {
       });
 
       setFoods(enrichedFoods);
+      setLoading(false)
     } catch (err) {
       console.error("Failed to fetch foods or meals", err);
     }
@@ -66,6 +68,8 @@ useEffect(() => {
 //    console.log(foods);
 //  }, [foods]);
 
+  if (loading) return <p>Loading food details…</p>;
+  
 
   //updated the state of searched item to be the input on the form
   const formChangeHandler = (e)=>{

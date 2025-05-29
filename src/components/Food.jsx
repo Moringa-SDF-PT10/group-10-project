@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function Food({food, isFavorite, onToggleFavorite, onDeleteFood}){
 
 return(
@@ -15,7 +17,7 @@ return(
       <span className="nutrient-name">{nutrient.name}</span>
       <span className="nutrient-details">
         {nutrient.number}&nbsp;
-        {nutrient.amount} {nutrient.unitName}
+         {nutrient.unitName}
       </span>
     </li>
   ))}
@@ -41,11 +43,9 @@ return(
     
     </button>
 
-    <button>
-           
-           View Details
-    
-    </button>
+     <Link to={`/food/${food.fdcId}`}>
+            <button>View Full Nutrient List</button>
+          </Link>
   
 
 </div>
