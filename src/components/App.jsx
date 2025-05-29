@@ -3,6 +3,7 @@ import LoginForm from './LoginForm';
 import SignUp from './SignUp';
 import FoodJournalForm from "./FoodJournalForm"
 import { Link, Routes, Route } from 'react-router-dom';
+import ProtectedRoutes from './ProtectedRoutes';
 import PrivateRoute from './PrivateRoute';
 import PersonalNotes from "./PersonalNotes";
 
