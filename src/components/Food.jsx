@@ -44,7 +44,7 @@ return(
     </button>
 
      <Link to={`/food/${food.fdcId}`}>
-            <button>View Full Nutrient List</button>
+            <button>View Full Details</button>
           </Link>
   
 

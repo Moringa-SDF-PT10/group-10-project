@@ -65,9 +65,18 @@ export default function FoodDetails() {
                 
                 <span className="nutrient-details">
                   {nutrient.nutrient.number} {nutrient.nutrient.unitName}
+                
                 </span>
+
+              
               </li>
             ))}
+              <span>
+                <h3 className="food-meta">   Data Type:  {food.dataType}</h3>
+                <h3 className = "food-meta">Publication Data: {food.publicationDate}</h3>
+                <h3 className = "food-meta">Food Class: {food.foodClass}</h3>
+                   
+                </span>
         </ul>
       </div>
     </div>
