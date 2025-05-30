@@ -5,7 +5,7 @@ export default function Food({food, isFavorite, onToggleFavorite, onDeleteFood})
 return(
 
 <div className = "food-box">
-    <p>Food Description: {food.description}</p>
+    <p> {food.description}</p>
   
   <div style={{ textAlign: 'center' }}>
   <img src={food.image} alt={food.description} width="500" height="600" />
