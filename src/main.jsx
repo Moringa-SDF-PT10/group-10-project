@@ -2,10 +2,14 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './assets/css/index.css'
 import App from './components/App.jsx'
-import { MemoryRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { AuthProvider } from './components/AuthContext';
+
 
 createRoot(document.getElementById('root')).render(
-  <Router>
-      <App />
-  </Router>,
+  <AuthProvider>
+    <Router>
+        <App />
+    </Router>
+  </AuthProvider>
 )

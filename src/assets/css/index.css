@@ -78,6 +78,79 @@ img{
 }
 
 
+
+.my-form-containerr form {
+  max-width: 420px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fefafa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(224, 224, 230);
+  font-family: sans-serif;
+}
+
+
+.my-form-containerr :is(input, textarea) {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+
+.my-form-containerr button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.my-form-containerr button:hover {
+  background-color: #0056b3;
+}
+
+/* Buttons inside each journal */
+.food-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.food-buttons button {
+  background-color: #e2e8f0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  transition: background-color 0.3s ease;
+  flex-grow: 1;
+  min-width: 110px;
+  text-align: center;
+}
+
+.food-buttons button:hover {
+  background-color: #cbd5e1;
+}
+
+.food-buttons button.important-btn {
+  background-color: #ff6b6b;
+  color: white;
+}
+
+.food-buttons button.important-btn:hover {
+  background-color: #e55353;
+}
+
 /*Styling for nutrient list*/
 .nutrient-list {
   list-style-type: none;
@@ -124,4 +197,19 @@ img{
 
 .food-meta:nth-of-type(2) {
   margin-bottom: 1.5rem; /* add space below the second line */
+}
+
+.toggleFavorites {
+  margin: 7px 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button {
+  margin: 2px 0;
+}
+
+.toggleFavorites:hover {
+  background-color: #4f378b;
+  color: white;
 }
