@@ -1,5 +1,5 @@
-import Food from './Food.jsx'
-import {useState} from 'react'
+import { useState } from "react";
+import Food from "./Food.jsx";
 import Search from './Search'
 
 export default function FoodList({foods, searchedItem}){
@@ -7,7 +7,7 @@ export default function FoodList({foods, searchedItem}){
   const [deletedIds, setDeletedIDs] = useState([]) // Tracks deleted foods
   const [favorites, setFavorites] = useState([])
   const [showFavorites, setShowFavorites] = useState(false)
-
+  const [commentsById, setCommentsById] = useState({});
 
   //delete handler
   function onDeleteFood(fdcId){
@@ -27,7 +27,12 @@ export default function FoodList({foods, searchedItem}){
     setFavorites((prevFavorites) => prevFavorites.includes(fdcId) ? prevFavorites.filter(id => id !== fdcId) : [...prevFavorites, fdcId])
    }
 
-
+  const handleLeaveComment = (fdcId, commentText) => {
+    setCommentsById((prev) => ({
+      ...prev,
+      [fdcId]: commentText,
+    }));
+  };
 
 
 
@@ -54,10 +59,12 @@ export default function FoodList({foods, searchedItem}){
           isFavorite={favorites.includes(food.fdcId)}
           onToggleFavorite={onToggleFavorite}
           onDeleteFood={onDeleteFood}
+          savedComment={commentsById[food.fdcId] || ""}
+          onLeaveComment={handleLeaveComment}
           />
         ))}
       </div>
     </>
 
     )
-}
+  }

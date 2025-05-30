@@ -1,5 +1,17 @@
-export default function Food({food, isFavorite, onToggleFavorite, onDeleteFood}){
+import { useState } from "react";
 
+export default function Food({food, isFavorite, onToggleFavorite, onDeleteFood, savedComment = "", onLeaveComment }){
+  const [showNoteInput, setShowNoteInput] = useState(false);
+  const [note, setNote] = useState(savedComment);
+
+  const handleLeaveNoteClick = () => {
+    setShowNoteInput(prev => !prev);
+  };
+
+  const handleSaveNote = () => {
+    onLeaveComment(food.fdcId, note);
+    setShowNoteInput(false);
+  };
 return(
 
 <div className = "food-box">
@@ -27,33 +39,54 @@ return(
    <h3 className="food-meta">Data Type: {food.dataType}</h3>
 <h3 className="food-meta">Publication Date: {food.publicationDate}</h3>
 
- 
- <div className = 'food-buttons'>
+<div className = 'food-buttons'>
+ <button>
+           
+           View Details
+    
+    </button>
 
      <button onClick={() => onToggleFavorite(food.fdcId)}>
            
       {isFavorite ? " Unmark as Favorite" : "Mark as Favorite"}
     
     </button>
+
       <button onClick={() => onDeleteFood(food.fdcId)}>
            
            Delete Food
     
     </button>
-
-    <button>
-           
-           View Details
-    
-    </button>
   
+      <button onClick={handleLeaveNoteClick} >
+        {showNoteInput ? 'Cancel' : 'Leave a Note'}
+      </button>
+  
+      {showNoteInput && (
+        <div>
+          <textarea
+            rows="4"
+            cols="50"
+            placeholder="Write your note here..."
+            value={note}
+            onChange={e => setNote(e.target.value)}
+          />
+          <br />
+          <button onClick={handleSaveNote}>Save Note</button>
+        </div>
+      )}
+
+      
+      {!showNoteInput && savedComment && (
+        <div>
+          <strong>Your Comment:</strong>
+          <p>{savedComment}</p>
+        </div>
+      )}
+
+
 
 </div>
-  
-
-
-
-
 </div>
 
 
