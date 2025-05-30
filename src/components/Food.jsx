@@ -44,11 +44,7 @@ return(
 <h3 className="food-meta">Publication Date: {food.publicationDate}</h3>
 
 <div className = 'food-buttons'>
- <button>
-           
-           View Details
-    
-    </button>
+
 
      <button onClick={() => onToggleFavorite(food.fdcId)}>
            
