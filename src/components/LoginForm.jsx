@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import {useLocation} from 'react-router-dom';
+
+
+import { useAuth } from './AuthContext'
 
 
 export default function LoginForm(){
@@ -8,7 +12,16 @@ export default function LoginForm(){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+
+    //protection tool
+    const { setUser } = useAuth();
+
     const navigate = useNavigate();
+
+
+    //smart redirection tools
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
 
     
@@ -21,8 +34,11 @@ export default function LoginForm(){
             password === storedUser.password
         ) {
             localStorage.setItem('isAuthenticated', 'true')
+
+            //protection tool
+            setUser({username})
             //redirect user after login
-            navigate('/home')
+           navigate(from, {replace: true});
         } else {
             alert('Invalid credentials');
         }
