@@ -1,7 +1,8 @@
-import { useState } from "react";
+import {useState} from 'react';
+import { Link } from "react-router-dom";
 
 export default function Food({food, isFavorite, onToggleFavorite, onDeleteFood, savedComment = "", onLeaveComment }){
-  const [showNoteInput, setShowNoteInput] = useState(false);
+   const [showNoteInput, setShowNoteInput] = useState(false);
   const [note, setNote] = useState(savedComment);
 
   const handleLeaveNoteClick = () => {
@@ -12,10 +13,13 @@ export default function Food({food, isFavorite, onToggleFavorite, onDeleteFood, 
     onLeaveComment(food.fdcId, note);
     setShowNoteInput(false);
   };
+
+
+
 return(
 
 <div className = "food-box">
-    <p>Food Description: {food.description}</p>
+    <p> {food.description}</p>
   
   <div style={{ textAlign: 'center' }}>
   <img src={food.image} alt={food.description} width="500" height="600" />
@@ -27,7 +31,7 @@ return(
       <span className="nutrient-name">{nutrient.name}</span>
       <span className="nutrient-details">
         {nutrient.number}&nbsp;
-        {nutrient.amount} {nutrient.unitName}
+         {nutrient.unitName}
       </span>
     </li>
   ))}
@@ -61,6 +65,10 @@ return(
       <button onClick={handleLeaveNoteClick} >
         {showNoteInput ? 'Cancel' : 'Leave a Note'}
       </button>
+
+     <Link to={`/food/${food.fdcId}`}>
+            <button>View Full Details</button>
+          </Link>
   
       {showNoteInput && (
         <div>

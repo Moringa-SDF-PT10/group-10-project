@@ -10,15 +10,13 @@ export default function FoodList({foods, searchedItem}){
   const [commentsById, setCommentsById] = useState({});
 
   //delete handler
-  function onDeleteFood(fdcId){
-    setDeletedIDs(prev => [...prev, fdcId]) // Deleted foods are added to the deletedIds array
-    setFavorites(prev => prev.filter(id => id !== fdcId)) // The deleted Id is removed in the favorites too
+  function onDeleteFood(fdcId) {
+    setDeletedIDs((prev) => [...prev, fdcId]); // Deleted foods are added to the deletedIds array
+    setFavorites((prev) => prev.filter((id) => id !== fdcId)); // The deleted Id is removed in the favorites too
   }
 
-
-
-  function toggleDisplay(){
-    setShowFavorites(!showFavorites)
+  function toggleDisplay() {
+    setShowFavorites(!showFavorites);
   }
 
   // Checks if food is in the favorites array and removes it if so, else adds it.
@@ -39,17 +37,16 @@ export default function FoodList({foods, searchedItem}){
     return(
     <>
       <br />
-      <button className='toggleFavorites' onClick={toggleDisplay}>
-          {showFavorites ? "Show All" : "Show Favorites"}
+      <button className="toggleFavorites" onClick={toggleDisplay}>
+        {showFavorites ? "Show All" : "Show Favorites"}
       </button>
-    
-      <div className = "food-list">
-      
-          {foods
-            .filter(food => !deletedIds.includes(food.fdcId))
-             .filter(food => 
-    food.description?.toLowerCase().includes(searchedItem.toLowerCase())
-  )
+
+      <div className="food-list">
+        {foods
+          .filter((food) => !deletedIds.includes(food.fdcId))
+          .filter((food) =>
+            food.description?.toLowerCase().includes(searchedItem.toLowerCase())
+          )
 
             .filter(food => !showFavorites || favorites.includes(food.fdcId))
             .map(food=>(
@@ -59,7 +56,7 @@ export default function FoodList({foods, searchedItem}){
           isFavorite={favorites.includes(food.fdcId)}
           onToggleFavorite={onToggleFavorite}
           onDeleteFood={onDeleteFood}
-          savedComment={commentsById[food.fdcId] || ""}
+            savedComment={commentsById[food.fdcId] || ""}
           onLeaveComment={handleLeaveComment}
           />
         ))}

@@ -11,6 +11,7 @@ import  { useAuth} from "./AuthContext";
 import {useNavigate} from 'react-router-dom';
 
 
+import FoodDetails from "./FoodDetails"
 
 // group 10 project
 
@@ -48,7 +49,7 @@ return(
             <Route path= "/FoodJournalForm" element = { <PrivateRoute><FoodJournalForm/></PrivateRoute>}/>
             <Route path= "/PersonalNotes" element = { <PrivateRoute><PersonalNotes/></PrivateRoute>}/>
       
-            
+             <Route path="/food/:fdcId" element={<FoodDetails />} />
             
 
 
