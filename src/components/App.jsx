@@ -67,7 +67,8 @@ return(
             <Route path= "/MyProfile" element = { <PrivateRoute><MyProfile/></PrivateRoute>}/>
             <Route path="/MyFavorites" element=  { <PrivateRoute><MyFavorites/></PrivateRoute>}/>      
             <Route path="/MyDashboard" element=  { <PrivateRoute><MyDashboard/></PrivateRoute>}/>   
-            <Route path="/MyGoals" element=  { <PrivateRoute><FoodDetails /><MyGoals/></PrivateRoute>}/> 
+            <Route path="/food/:fdcId" element=  { <PrivateRoute><FoodDetails /></PrivateRoute>}/> 
+          
                            
             
 
