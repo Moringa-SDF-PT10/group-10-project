@@ -18,10 +18,10 @@ function AboutUs(){
                 </div>
                 <div className="contact-item">
                     <h2>Fortune Omondi</h2>
-                    <a href="#">Fortune's Email</a>
+                    <a href="#">fortune.omondi1@student.moringaschool.com</a>
                 </div>
                 <div className="contact-item">
-                    <h2>Karl</h2>
+                    <h2>Karl Kamau</h2>
                     <a href="#">kxrlmunyoro@gmail.com</a>
                 </div>
                 <div className="contact-item">
