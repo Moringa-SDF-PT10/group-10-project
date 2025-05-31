@@ -84,6 +84,7 @@ useEffect(() => {
     <>
     <div className = "container">
       <h1>Food Nutrition App </h1>
+      <h1>What's In Food</h1>
       
       <Search formChangeHandler ={formChangeHandler}/>
       

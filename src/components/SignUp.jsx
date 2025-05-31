@@ -14,13 +14,22 @@ export default function SignUp() {
         const user = {username, password};
         localStorage.setItem('user', JSON.stringify(user));
         alert('user registered successfully!');
-        navigate('/LoginForm')
+        navigate(-1)
     };
 
     return (
         <div className="my-form-containerr">
             <form onSubmit={(e) => e.preventDefault()}>
                 <h2>Sign Up</h2>
+
+                <input
+                type="email"
+                placeholder="Enter your Email"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                />
+
                 <input
                 type="text"
                 placeholder="Choose a username"
