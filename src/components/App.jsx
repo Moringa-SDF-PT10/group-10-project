@@ -6,6 +6,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 import ProtectedRoutes from './ProtectedRoutes';
 import PrivateRoute from './PrivateRoute';
 import PersonalNotes from "./PersonalNotes";
+import AboutUs from './AboutUs';
 
 import  { useAuth} from "./AuthContext";
 import {useNavigate} from 'react-router-dom';
@@ -34,9 +35,10 @@ return(
         <Link to= {"/LoginForm"}>LoginForm</Link>
         <Link to= {"/FoodJournalForm"}>FoodJournalForm</Link>
         <Link to= {"/PersonalNotes"}>PersonalNotes</Link>
+        <Link to= {"/AboutUs"}>AboutUs</Link>
          <button onClick={handleLogout} className="logout-button">
                 Logout
-            </button>
+        </button>
       
     </nav>
     <main className = "app-main">
@@ -44,7 +46,7 @@ return(
             <Route path= "/" element = {<Home/>}/>
             <Route path= "/LoginForm" element = {<LoginForm/>}/>
             <Route path= "/SignUp" element = {<SignUp/>}/>
-           
+            <Route path='/AboutUs' element = {<AboutUs/>}/>
             <Route path= "/FoodJournalForm" element = { <PrivateRoute><FoodJournalForm/></PrivateRoute>}/>
             <Route path= "/PersonalNotes" element = { <PrivateRoute><PersonalNotes/></PrivateRoute>}/>
       
