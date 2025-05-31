@@ -65,8 +65,8 @@ return(
             {/* Protected Route */}
             <Route path= "/FoodJournalForm" element = { <PrivateRoute><FoodJournalForm/></PrivateRoute>}/>
             <Route path= "/MyProfile" element = { <PrivateRoute><MyProfile/></PrivateRoute>}/>
-            <Route path="/MyFavorites" element=  { <PrivateRoute><FoodDetails /><MyFavorites/></PrivateRoute>}/>      
-            <Route path="/MyDashboard" element=  { <PrivateRoute><FoodDetails /><MyDashboard/></PrivateRoute>}/>   
+            <Route path="/MyFavorites" element=  { <PrivateRoute><MyFavorites/></PrivateRoute>}/>      
+            <Route path="/MyDashboard" element=  { <PrivateRoute><MyDashboard/></PrivateRoute>}/>   
             <Route path="/MyGoals" element=  { <PrivateRoute><FoodDetails /><MyGoals/></PrivateRoute>}/> 
                            
             
