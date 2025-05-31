@@ -7,13 +7,8 @@ import ProtectedRoutes from './ProtectedRoutes';
 import PrivateRoute from './PrivateRoute';
 import PersonalNotes from "./PersonalNotes";
 import AboutUs from './AboutUs';
-
 import  { useAuth} from "./AuthContext";
 import {useNavigate} from 'react-router-dom';
-
-
-
-// group 10 project
 
 
 export default function App(){
@@ -36,11 +31,12 @@ return(
         <Link to= {"/FoodJournalForm"}>FoodJournalForm</Link>
         <Link to= {"/PersonalNotes"}>PersonalNotes</Link>
         <Link to= {"/AboutUs"}>AboutUs</Link>
-         <button onClick={handleLogout} className="logout-button">
+        <button onClick={handleLogout} className="logout-button">
                 Logout
         </button>
       
     </nav>
+
     <main className = "app-main">
         <Routes>
             <Route path= "/" element = {<Home/>}/>
@@ -49,25 +45,8 @@ return(
             <Route path='/AboutUs' element = {<AboutUs/>}/>
             <Route path= "/FoodJournalForm" element = { <PrivateRoute><FoodJournalForm/></PrivateRoute>}/>
             <Route path= "/PersonalNotes" element = { <PrivateRoute><PersonalNotes/></PrivateRoute>}/>
-      
-            
-            
-
-
-
-
         </Routes>
-
-
-
     </main>
 
-   
-
-
 </div>
-
-
-
-)
-}
+)}
