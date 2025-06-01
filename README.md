@@ -1,12 +1,51 @@
-# React + Vite
+# 🍲 FOOD NUTRITION APPLICATION
+Welcome to our Food Nutrition Apllication. Built with React for a fast and responsive user experience, Food Nutrition App helps you track your daily meals, explore nutritional data, and discover healthy food alternatives. At Food Nutrition App, we believe that good nutrition should be simple, transparent, and available to everyone.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Features 
+- Browse a list of foods with their nutrition details. `/Home `
+- Search foods `/Search` 
+- User authentication (for protected routes) `/Login` 
+- Ability to save favorite foods (protected). `/Favorite` 
+- Add personal notes to foods (protected). `/PersonalNotes` 
+- Edit profile/settings (protected). `/Profile` 
+- Ability to see detailed nutritional info a specific food selected. `/FoodDetail` 
+- Ability to delete a food from favorites(protected) 
+- Ability to add new food journals `/MyFoodJournal`
 
-Currently, two official plugins are available:
+## Repository Setup
+- **Fork** and **Clone** the Repository
+```
+git clone <repository link>
+```
+- `cd` into the repository folder
+```
+cd <repo-name>
+```
+- `npm install` to get the dependencies for the project
+```
+npm install
+```
+- `npm run dev` to display the project on a browser using a recommended port
+```
+npm run dev
+```
+## 🗂️ File Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tech Stack
+- **Frontend:** React (Functional Components, Hooks and Routes)
+- **Styling:** Basic CSS
+- **API:** [FoodDataFromUSDA](https://api.nal.usda.gov/fdc/v1/foods/list?api_key=8Rv57kYxBTe6DURXfAZu8DBKcol1W0hpsrc7d1xJ)
 
-## Expanding the ESLint configuration
+## Screenshots
+![Image]()
+![Image]()
+![Image]()
+![Image]()
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+##  License
+- MIT License
+
+## Contributors
+
+
+## Acknowledgement
