@@ -4,17 +4,14 @@ import SignUp from './SignUp';
 import FoodJournalForm from "./FoodJournalForm"
 import { Link, Routes, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
-import About from './About';
 import MyProfile from './MyProfile';
 import MyFavorites from './MyFavorites';
 import MyDashboard from './MyDashboard';
 import MyGoals from './MyGoals';
 
-
+import AboutUs from './AboutUs';
 import  { useAuth} from "./AuthContext";
 import {useNavigate} from 'react-router-dom';
-
-
 import FoodDetails from "./FoodDetails"
 
 // group 10 project
@@ -36,7 +33,6 @@ return(
 <div>
     <nav className = "app-nav">
         <Link to= {"/"}>Home</Link>
-        <Link to= {"/About"}>About</Link>
         <Link to= {"/MyFavorites"}>My Favorites</Link>
         <Link to= {"/FoodJournalForm"}>My Food Journal</Link>
         <Link to= {"/MyGoals"}>My Goals</Link>
@@ -46,21 +42,23 @@ return(
         <Link to= {"/MyProfile"}>My Profile</Link>
         
         
-         <button onClick={handleLogout} className="logout-button">
+        <Link to= {"/AboutUs"}>AboutUs</Link>
+        <button onClick={handleLogout} className="logout-button">
             
             {!user? "Login" : "Logout"}   
-            </button>
+        </button>
 
      
       
     </nav>
+
     <main className = "app-main">
         <Routes>
             <Route path= "/" element = {<Home/>}/>
-            <Route path= "/About" element = {<About/>}/>
+           
             <Route path= "/LoginForm" element = {<LoginForm/>}/>
             <Route path= "/SignUp" element = {<SignUp/>}/>
-           
+            <Route path='/AboutUs' element = {<AboutUs/>}/>
 
             {/* Protected Route */}
             <Route path= "/FoodJournalForm" element = { <PrivateRoute><FoodJournalForm/></PrivateRoute>}/>
@@ -76,17 +74,7 @@ return(
 
 
         </Routes>
-
-
-
     </main>
 
-   
-
-
 </div>
-
-
-
-)
-}
+)}
