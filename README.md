@@ -31,21 +31,38 @@ npm run dev
 ```
 ## 🗂️ File Structure
 
+
+
 ## 🛠️ Tech Stack
 - **Frontend:** React (Functional Components, Hooks and Routes)
 - **Styling:** Basic CSS
-- **API:** [FoodDataFromUSDA](https://api.nal.usda.gov/fdc/v1/foods/list?api_key=8Rv57kYxBTe6DURXfAZu8DBKcol1W0hpsrc7d1xJ)
+- **APIs:** [FoodDataFromUSDA](https://api.nal.usda.gov/fdc/v1/foods/list?api_key=8Rv57kYxBTe6DURXfAZu8DBKcol1W0hpsrc7d1xJ), [RandomFoodImages](https://via.placeholder.com/500x600?text=No+Image)
 
-## Screenshots
+## 📸 Screenshots
 ![Image]()
 ![Image]()
 ![Image]()
 ![Image]()
 
-##  License
-- MIT License
+## 📄 License
+[MIT License](./LICENSE)
 
-## Contributors
+## ✅ Future Improvements
+- 
+- 
+- 
+- 
 
+## 🧑🏿‍🤝‍🧑🏿 Contributors
+ - [AntonyOmondi](https://github.com/AntonyOmondi)
+ - [jkininga](https://github.com/jkininga)
+ - [Gregg-K](https://github.com/Gregg-K)
+ - [KarlMunyoro](https://github.com/KarlMunyoro)
+- [Fortune]()
 
 ## Acknowledgement
+- Moringa School
+- Technical Mentors:-
+    - Ian Okumu
+    - Charles Swaleh
+- Every Group 10 Member (Contributors)
