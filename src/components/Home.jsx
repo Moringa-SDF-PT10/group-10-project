@@ -83,9 +83,11 @@ useEffect(() => {
   return (
     <>
     <div className = "container">
-      <h1>Food Nutrition App </h1>
-      <h1>What's In Food</h1>
-      
+      <h1>Welcome to the Food Nutrition App </h1>
+      <h1>No Guess work, What's In Food</h1>
+      <p>Dive deep into what’s really on your plate. Search foods, explore nutrients, and track the details that matter most.</p>
+      <p>Whether you're tracking macros or just curious, we’ve got the full breakdown — from Vitamin A to Zinc. </p>
+      <p>Unlock 66 nutrient facts per item.</p>
       <Search formChangeHandler ={formChangeHandler}/>
       
       <FoodList searchedItem = {searchedItem} foods = {foods}/>
