@@ -280,3 +280,29 @@ button {
   color: #6750a4;
 }
 
+.daily-log-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 1rem;
+  border-radius: 10px;
+  background: #f7f9fc;
+  max-width: 400px;
+  margin: auto;
+}
+
+.daily-log-form label {
+  display: flex;
+  gap: 10px;
+  font-size: 1rem;
+  align-items: center;
+}
+
+.daily-log-form button {
+  padding: 0.5rem 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
