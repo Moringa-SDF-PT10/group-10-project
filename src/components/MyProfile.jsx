@@ -19,9 +19,6 @@ function MyProfile() {
         <strong>Username:</strong> {storedUser.username}
       </p>
       <p>
-        <strong>Email:</strong> {storedUser.email}
-      </p>
-      <p>
         <strong>Password:</strong> {storedUser.password}
       </p>
     </div>

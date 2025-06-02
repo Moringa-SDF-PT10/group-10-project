@@ -21,14 +21,6 @@ export default function SignUp() {
         <h2>Sign Up</h2>
 
         <input
-          type="email"
-          placeholder="Enter your Email"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-
-        <input
           type="text"
           placeholder="Choose a username"
           value={username}
