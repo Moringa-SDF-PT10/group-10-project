@@ -39,10 +39,7 @@ npm run dev
 - **APIs:** [FoodDataFromUSDA](https://api.nal.usda.gov/fdc/v1/foods/list?api_key=8Rv57kYxBTe6DURXfAZu8DBKcol1W0hpsrc7d1xJ), [RandomFoodImages](https://via.placeholder.com/500x600?text=No+Image)
 
 ## 📸 Screenshots
-![Image]()
-![Image]()
-![Image]()
-![Image]()
+
 
 ## 📄 License
 [MIT License](./LICENSE)
