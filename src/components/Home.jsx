@@ -37,7 +37,7 @@ function Home({
         <h1>No Guess work, What's In Food</h1>
         <p>
           Dive deep into what’s really on your plate. Search foods, explore
-          nutrients, and track the details that matter most.
+          nutrients, and track the details that matter most to help you make healthful eating choices
         </p>
         <p>
           Whether you're tracking macros or just curious, we’ve got the full

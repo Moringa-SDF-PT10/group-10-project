@@ -336,3 +336,114 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
+
+
+/* Dashbaord Page styling */
+
+
+.dashboard-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  background: #f8f6fc;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(80, 80, 120, 0.10);
+}
+
+/* Dashboard Heading */
+.dashboard-heading {
+  text-align: center;
+  color: #4f378b;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(80, 80, 120, 0.07);
+}
+
+.dashboard-section h2 {
+  color: #4f378b;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  border-bottom: 1px solid #e0d7fa;
+  padding-bottom: 0.5rem;
+}
+
+/* Wellness Logs List */
+.wellness-logs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.wellness-log-entry {
+  background: #f3f0fa;
+  border-left: 5px solid #4f378b;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(80, 80, 120, 0.05);
+}
+
+.wellness-log-entry ul {
+  margin: 0.5rem 0 0 0;
+  padding-left: 1.2rem;
+}
+
+.wellness-log-entry li {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Favorites Section */
+.dashboard-section.favorites {
+  background: #f9f7fd;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .dashboard-container {
+    padding: 1rem 0.5rem;
+  }
+  .dashboard-section {
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* Profile page styling */
+
+
+/* My Profile Styling */
+.profile-container {
+  background: #f3f0fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(80, 80, 120, 0.07);
+  padding: 2rem 1.5rem;
+  max-width: 350px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.profile-container h2 {
+  color: #4f378b;
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.profile-container p {
+  font-size: 1.1rem;
+  margin: 0.7rem 0;
+  color: #333;
+}
+
+.profile-container strong {
+  color: #4f378b;
+  margin-right: 0.5rem;
+}

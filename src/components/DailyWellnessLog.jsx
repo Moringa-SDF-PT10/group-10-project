@@ -23,6 +23,12 @@ const handleSubmit = (e) => {
     const values = Object.values(formData);
     const score = values.filter(Boolean).length;
 
+
+  // Call the handler to pass data up to App
+  if (handleWellnessSubmit) {
+    handleWellnessSubmit(formData);
+  }
+
     if (score >= 4) {
       setMessage("👏 You're crushing it! Keep up the great work!");
     } else {
@@ -33,7 +39,7 @@ const handleSubmit = (e) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="daily-log-form">
+    <form  onSubmit={handleSubmit} className="daily-log-form">
       <h2>🗓️ Daily Wellness Check</h2>
 
       <label>

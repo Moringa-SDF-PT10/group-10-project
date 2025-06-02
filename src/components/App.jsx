@@ -13,9 +13,7 @@ import { useAuth } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 import FoodDetails from "./FoodDetails";
 import { useState, useEffect } from "react";
-import NavBar from './NavBar';
-
-
+import NavBar from "./NavBar";
 
 export default function App() {
   //Initialize the initial state of data in an empty array before fetching
@@ -25,7 +23,7 @@ export default function App() {
   const [deletedIds, setDeletedIDs] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [commentsById, setCommentsById] = useState({});
-  const [wellnessByUser, setWellnessByUser] = useState({});
+  const [wellnessLogs, setWellnessLogs] = useState([]);
 
   //delete food hanlder
   const onDeleteFood = (fdcId) => {
@@ -99,24 +97,17 @@ export default function App() {
   };
 
   const handleIn = () => {
-  navigate("/LoginForm");
-};
+    navigate("/LoginForm");
+  };
 
-
-
-const handleWellnessSubmit = (wellnessData) => {
-  if (!user) return;
-  setWellnessByUser(prev => ({
-    ...prev,
-    [user.id]: [...(prev[user.id] || []), wellnessData]
-  }));
+//wellness data handler
+  const handleWellnessSubmit = (wellnessData) => {
+  setWellnessLogs(prev => [...prev, wellnessData]);
 };
 
   return (
     <div>
-
-    <NavBar user={user} handleLogout={handleLogout} handleIn={handleIn} />
-
+      <NavBar user={user} handleLogout={handleLogout} handleIn={handleIn} />
 
       <main className="app-main">
         <Routes>
@@ -178,7 +169,16 @@ const handleWellnessSubmit = (wellnessData) => {
             path="/MyDashboard"
             element={
               <PrivateRoute>
-                <MyDashboard wellnessLogs={wellnessByUser[user?.id] || []} />
+                <MyDashboard
+                  favorites={favorites}
+                  foods={foods}
+                  onToggleFavorite={onToggleFavorite}
+                  onDeleteFood={onDeleteFood}
+                  commentsById={commentsById}
+                  onLeaveComment={handleLeaveComment}
+                  wellnessLogs={wellnessLogs}
+                  handleWellnessSubmit = {handleWellnessSubmit}
+                />
               </PrivateRoute>
             }
           />
@@ -194,7 +194,7 @@ const handleWellnessSubmit = (wellnessData) => {
             path="/DailyWellnessLog"
             element={
               <PrivateRoute>
-                <DailyWellnessLog handleWellnessSubmit = {handleWellnessSubmit}  />
+                <DailyWellnessLog  handleWellnessSubmit={handleWellnessSubmit} />
               </PrivateRoute>
             }
           />
