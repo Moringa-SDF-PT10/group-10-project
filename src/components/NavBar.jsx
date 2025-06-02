@@ -6,7 +6,6 @@ export default function NavBar({ user, handleLogout, handleIn }) {
       <Link to={"/"}>Home</Link>
       <Link to={"/AboutUs"}>About</Link>
       <Link to={"/MyFavorites"}>My Favorites</Link>
-      <Link to={"/FoodJournalForm"}>My Food Journal</Link>
       <Link to={"/DailyWellnessLog"}>My Daily Wellness Log</Link>
       <Link to={"/MyDashboard"}>My Dashboard</Link>
       <Link to={"/MyProfile"}>My Profile</Link>

@@ -1,7 +1,6 @@
 import Home from "./Home";
 import LoginForm from "./LoginForm";
 import SignUp from "./SignUp";
-import FoodJournalForm from "./FoodJournalForm";
 import { Link, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import MyProfile from "./MyProfile";
@@ -137,14 +136,7 @@ export default function App() {
           <Route path="/AboutUs" element={<AboutUs />} />
 
           {/* Protected Route */}
-          <Route
-            path="/FoodJournalForm"
-            element={
-              <PrivateRoute>
-                <FoodJournalForm />
-              </PrivateRoute>
-            }
-          />
+        
           <Route
             path="/MyProfile"
             element={
