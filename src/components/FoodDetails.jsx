@@ -52,36 +52,42 @@ export default function FoodDetails() {
 
   return (
     <div className="food-details-container">
-       
-    <div className="food-details-image-wrapper">
-    <div id="detailed-nutrient-main-box">
-      <h2>{food.description}</h2>
-      <div style={{ textAlign: "center" }}>
-        <img src={food.image} alt={food.description} width="500" height="600" />
-      </div>
-      <div id="detail-nutrient-container">
-        <ul className="nutrient-list">
-          {food.foodNutrients &&
-            food.foodNutrients.map((nutrient, index) => (
-              <li key={index}>
-                <span className="nutrient-name">{nutrient.nutrient.name}</span>
+      <div className="food-details-image-wrapper">
+        <div id="detailed-nutrient-main-box">
+          <h2>{food.description}</h2>
+          <div style={{ textAlign: "center" }}>
+            <img
+              src={food.image}
+              alt={food.description}
+              width="500"
+              height="600"
+            />
+          </div>
+          <div id="detail-nutrient-container">
+            <ul className="nutrient-list">
+              {food.foodNutrients &&
+                food.foodNutrients.map((nutrient, index) => (
+                  <li key={index}>
+                    <span className="nutrient-name">
+                      {nutrient.nutrient.name}
+                    </span>
 
-                <span className="nutrient-details">
-                  {nutrient.nutrient.number} {nutrient.nutrient.unitName}
-                </span>
-              </li>
-            ))}
-          <span>
-            <h3 className="food-meta"> Data Type: {food.dataType}</h3>
-            <h3 className="food-meta">
-              Publication Data: {food.publicationDate}
-            </h3>
-            <h3 className="food-meta">Food Class: {food.foodClass}</h3>
-          </span>
-        </ul>
+                    <span className="nutrient-details">
+                      {nutrient.nutrient.number} {nutrient.nutrient.unitName}
+                    </span>
+                  </li>
+                ))}
+              <span>
+                <h3 className="food-meta"> Data Type: {food.dataType}</h3>
+                <h3 className="food-meta">
+                  Publication Data: {food.publicationDate}
+                </h3>
+                <h3 className="food-meta">Food Class: {food.foodClass}</h3>
+              </span>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-   </div>
-   </div>
   );
 }
