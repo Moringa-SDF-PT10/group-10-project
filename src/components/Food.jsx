@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { Link } from "react-router-dom";
 
-export default function Food({food, isFavorite, onToggleFavorite, onDeleteFood, savedComment = "", onLeaveComment }){
+export default function Food({food, isFavorite, onToggleFavorite, onDeleteFood, savedComment = "", handleLeaveComment }){
    const [showNoteInput, setShowNoteInput] = useState(false);
   const [note, setNote] = useState(savedComment);
 
@@ -10,7 +10,7 @@ export default function Food({food, isFavorite, onToggleFavorite, onDeleteFood, 
   };
 
   const handleSaveNote = () => {
-    onLeaveComment(food.fdcId, note);
+    handleLeaveComment(food.fdcId, note);
     setShowNoteInput(false);
   };
 

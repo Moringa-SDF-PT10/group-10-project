@@ -1,8 +1,9 @@
 import Food from "./Food.jsx";
 
-export default function FavoritesList({ foods, favorites, onToggleFavorite, onDeleteFood, commentsById, onLeaveComment }) {
+export default function MyFavorites({ foods=[], favorites=[], onToggleFavorite, onDeleteFood, commentsById, onLeaveComment }) {
   const favoriteFoods = foods.filter(food => favorites.includes(food.fdcId));
 
+  console.log(favorites)
   return (
     <div className="food-list">
       {favoriteFoods.map((food) => (
