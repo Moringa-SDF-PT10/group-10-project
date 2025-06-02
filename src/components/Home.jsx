@@ -32,7 +32,7 @@ function Home({
         </p>
         <img
           className="home-hero-image"
-          src="./src/assets/images/desktop.png"
+          src="/desktop.png"
           alt="Healthy food"
         />
         <p className="home-description">
