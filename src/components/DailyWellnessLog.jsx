@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function DailyWellnessLog() {
+export default function DailyWellnessLog({handleWellnessSubmit}) {
 
   const [message, setMessage]  = useState("")
 

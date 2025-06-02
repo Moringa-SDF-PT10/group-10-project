@@ -13,6 +13,7 @@ import { useAuth } from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 import FoodDetails from "./FoodDetails";
 import { useState, useEffect } from "react";
+import NavBar from './NavBar';
 
 
 
@@ -20,13 +21,11 @@ export default function App() {
   //Initialize the initial state of data in an empty array before fetching
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  //Initialize the initial state of search
   const [searchedItem, setSearchedItem] = useState("");
-
   const [deletedIds, setDeletedIDs] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [commentsById, setCommentsById] = useState({});
+  const [wellnessByUser, setWellnessByUser] = useState({});
 
   //delete food hanlder
   const onDeleteFood = (fdcId) => {
@@ -103,23 +102,21 @@ export default function App() {
   navigate("/LoginForm");
 };
 
+
+
+const handleWellnessSubmit = (wellnessData) => {
+  if (!user) return;
+  setWellnessByUser(prev => ({
+    ...prev,
+    [user.id]: [...(prev[user.id] || []), wellnessData]
+  }));
+};
+
   return (
     <div>
-      <nav className="app-nav">
-        <Link to={"/"}>Home</Link>
-        <Link to={"/AboutUs"}>About</Link>
-        <Link to={"/MyFavorites"}>My Favorites</Link>
-        <Link to={"/FoodJournalForm"}>My Food Journal</Link>
-        <Link to={"/DailyWellnessLog"}>My Daily Wellness Log</Link>
-        <Link to={"/MyDashboard"}>My Dashboard</Link>
-        <Link to={"/LoginForm"}>Login Form</Link>
-        <Link to={"/SignUp"}>Sign Up</Link>
-        <Link to={"/MyProfile"}>My Profile</Link>
 
-        <button onClick= {!user? handleIn : handleLogout} className="logout-button">
-          {!user ? "Login" : "Logout"}
-        </button>
-      </nav>
+    <NavBar user={user} handleLogout={handleLogout} handleIn={handleIn} />
+
 
       <main className="app-main">
         <Routes>
@@ -181,7 +178,7 @@ export default function App() {
             path="/MyDashboard"
             element={
               <PrivateRoute>
-                <MyDashboard />
+                <MyDashboard wellnessLogs={wellnessByUser[user?.id] || []} />
               </PrivateRoute>
             }
           />
@@ -197,7 +194,7 @@ export default function App() {
             path="/DailyWellnessLog"
             element={
               <PrivateRoute>
-                <DailyWellnessLog />
+                <DailyWellnessLog handleWellnessSubmit = {handleWellnessSubmit}  />
               </PrivateRoute>
             }
           />

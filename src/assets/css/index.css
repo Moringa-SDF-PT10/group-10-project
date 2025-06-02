@@ -55,27 +55,57 @@ img{
   height: 200px;
 }
 
-
+/* NavBar Styling */
 .app-nav {
   display: flex;
-  gap: 1rem;
-  background-color: #ffffff;
-  padding: 0.5rem 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: #4f378b;
+  padding: 1rem 2rem;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 2px 8px rgba(80, 80, 120, 0.10);
+  flex-wrap: wrap;
 }
+
+/* Styling the navbar component */
 
 .app-nav a {
+  color: #fff;
   text-decoration: none;
-  color: #6750a4;
   font-weight: 500;
-  transition: color 0.2s;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
 }
 
-.app-nav a:hover {
+.app-nav a:hover,
+.app-nav a.active {
+  background: #fff;
   color: #4f378b;
 }
+
+.logout-button {
+  margin-left: 1rem;
+  padding: 0.5rem 1.2rem;
+  background: #fff;
+  color: #4f378b;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(80, 80, 120, 0.08);
+}
+
+.logout-button:hover {
+  background: #e0d7fa;
+  color: #2d1a5a;
+}
+
+
 
 
 
