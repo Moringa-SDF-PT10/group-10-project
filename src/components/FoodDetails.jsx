@@ -51,6 +51,9 @@ export default function FoodDetails() {
   console.log(food);
 
   return (
+    <div className="food-details-container">
+       
+    <div className="food-details-image-wrapper">
     <div id="detailed-nutrient-main-box">
       <h2>{food.description}</h2>
       <div style={{ textAlign: "center" }}>
@@ -62,23 +65,23 @@ export default function FoodDetails() {
             food.foodNutrients.map((nutrient, index) => (
               <li key={index}>
                 <span className="nutrient-name">{nutrient.nutrient.name}</span>
-                
+
                 <span className="nutrient-details">
                   {nutrient.nutrient.number} {nutrient.nutrient.unitName}
-                
                 </span>
-
-              
               </li>
             ))}
-              <span>
-                <h3 className="food-meta">   Data Type:  {food.dataType}</h3>
-                <h3 className = "food-meta">Publication Data: {food.publicationDate}</h3>
-                <h3 className = "food-meta">Food Class: {food.foodClass}</h3>
-                   
-                </span>
+          <span>
+            <h3 className="food-meta"> Data Type: {food.dataType}</h3>
+            <h3 className="food-meta">
+              Publication Data: {food.publicationDate}
+            </h3>
+            <h3 className="food-meta">Food Class: {food.foodClass}</h3>
+          </span>
         </ul>
       </div>
     </div>
+   </div>
+   </div>
   );
 }

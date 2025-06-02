@@ -16,7 +16,7 @@ import { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 
 export default function App() {
-  //Initialize the initial state of data in an empty array before fetching
+  //States
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchedItem, setSearchedItem] = useState("");
@@ -25,13 +25,13 @@ export default function App() {
   const [commentsById, setCommentsById] = useState({});
   const [wellnessLogs, setWellnessLogs] = useState([]);
 
-  //delete food hanlder
+  //Delete food handler
   const onDeleteFood = (fdcId) => {
     setDeletedIDs((prev) => [...prev, fdcId]);
     setFavorites((prev) => prev.filter((id) => id !== fdcId));
   };
 
-  //mark as favorite handler
+  //Favorite handler
   const onToggleFavorite = (fdcId) => {
     setFavorites((prev) =>
       prev.includes(fdcId)
@@ -48,7 +48,7 @@ export default function App() {
     }));
   };
 
-  //Fetch data using the useEffect hook
+  //Fetch data
   useEffect(() => {
     const fetchFoodsWithRandomImages = async () => {
       try {
@@ -59,7 +59,7 @@ export default function App() {
         const foodData = await foodResponse.json();
         const limitedFoods = foodData.slice(3, 23); // fetch only 20 .. limit for performance
 
-        // 2. Fetch meal data from MealDB
+        // 2. Fetch image data from MealDB
         const mealResponse = await fetch(
           "https://www.themealdb.com/api/json/v1/1/search.php?s="
         );
@@ -87,23 +87,26 @@ export default function App() {
     fetchFoodsWithRandomImages();
   }, []);
 
+  //Authentication handler
   const { user, setUser } = useAuth();
   const navigate = useNavigate();
 
+  //logout hanlder
   const handleLogout = () => {
     setUser(null);
     localStorage.removeItem("isAuthenticated");
     navigate("/");
   };
 
+  //Login handler
   const handleIn = () => {
     navigate("/LoginForm");
   };
 
-//wellness data handler
+  //wellness data handler
   const handleWellnessSubmit = (wellnessData) => {
-  setWellnessLogs(prev => [...prev, wellnessData]);
-};
+    setWellnessLogs((prev) => [...prev, wellnessData]);
+  };
 
   return (
     <div>
@@ -177,7 +180,7 @@ export default function App() {
                   commentsById={commentsById}
                   onLeaveComment={handleLeaveComment}
                   wellnessLogs={wellnessLogs}
-                  handleWellnessSubmit = {handleWellnessSubmit}
+                  handleWellnessSubmit={handleWellnessSubmit}
                 />
               </PrivateRoute>
             }
@@ -194,7 +197,7 @@ export default function App() {
             path="/DailyWellnessLog"
             element={
               <PrivateRoute>
-                <DailyWellnessLog  handleWellnessSubmit={handleWellnessSubmit} />
+                <DailyWellnessLog handleWellnessSubmit={handleWellnessSubmit} />
               </PrivateRoute>
             }
           />
