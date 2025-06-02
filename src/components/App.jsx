@@ -33,6 +33,7 @@ return(
 <div>
     <nav className = "app-nav">
         <Link to= {"/"}>Home</Link>
+        <Link to= {"/AboutUs"}>About</Link>
         <Link to= {"/MyFavorites"}>My Favorites</Link>
         <Link to= {"/FoodJournalForm"}>My Food Journal</Link>
         <Link to= {"/DailyWellnessLog"}>My Daily Wellness Log</Link>
@@ -42,7 +43,7 @@ return(
         <Link to= {"/MyProfile"}>My Profile</Link>
         
         
-        <Link to= {"/AboutUs"}>AboutUs</Link>
+      
         <button onClick={handleLogout} className="logout-button">
             
             {!user? "Login" : "Logout"}   
